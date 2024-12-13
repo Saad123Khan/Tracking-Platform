@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter_18pt-Regular.ttf') format('truetype');
+    font-style: normal;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    background-color: #060c22; 
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
+
+  h1 {
+    font-size: 36px; /* Heading 1 size */
+    font-weight: 700; /* Bold */
+  }
+  
+  h2 {
+    font-size: 30px; /* Heading 2 size */
+    font-weight: 600; /* Semi-Bold */
+  }
+  
+  h3 {
+    font-size: 24px; /* Heading 3 size */
+    font-weight: 700; /* Medium */
+  }
+  
+  h4 {
+    font-size: 20px; /* Heading 4 size */
+    font-weight: 500; /* Regular */
+  }
+  
+  h5 {
+    font-size: 16px; /* Heading 5 size */
+    font-weight: 400; /* Regular */
+  }
+  
+  h6 {
+    font-size: 14px; /* Heading 6 size */
+    font-weight: 300; /* Light */
+  }
+  
+/* Width and height of the scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Width of vertical scrollbar */
+  height: 12px; /* Height of horizontal scrollbar */
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: #ffffff; /* Track color */
+  border-radius: 10px; /* Rounded corners */
+  height: 100px;
+}
+
+/* Handle (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #6e62e5; /* Handle color */
+  border-radius: 10px; /* Rounded corners */
+}
+}
