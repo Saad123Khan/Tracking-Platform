@@ -68,7 +68,7 @@ const CurrencyPart = () => {
             <button className="text-sm gap-1 flex items-center bg-[#1d214d] text-white px-4 py-2 rounded-[100px]  focus:outline-none">
               {selectedChain === 'ETHEREUM' && <Image src={"/images/ethereum.png"} alt='ethereum-img' width={17} height={17} />}
               {selectedChain === 'SOLANA' &&   <Image src={"/images/solana.png"} alt='solana-img' width={17} height={17} /> }
-              {selectedChain === 'BASE' && <Image src={"/images/base.png"} alt='BASE-img' width={17} height={17} />}
+              {selectedChain === 'BASE' && <Image src={"/images/Base.png"} alt='BASE-img' width={17} height={17} />}
               {selectedChain === 'BSC' &&   <Image src={"/images/bsc.png"} alt='BSC-img' width={17} height={17} />}
               {selectedChain === 'POLYGON' &&   <Image src={"/images/polygon.png"} alt='BSC-img' width={17} height={17} />}
               {selectedChain}
@@ -96,7 +96,7 @@ const CurrencyPart = () => {
                     onClick={() => handleSelect('BASE')}
                     className="flex items-center gap-1 text-sm px-2 py-2 text-white cursor-pointer hover:bg-medium-purple"
                   >
-                    <Image src={"/images/base.png"} alt='BASE-img' width={17} height={17} /> BASE
+                    <Image src={"/images/Base.png"} alt='BASE-img' width={17} height={17} /> BASE
                   </div>
                   <div
                     onClick={() => handleSelect('BSC')}
