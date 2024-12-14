@@ -46,7 +46,7 @@ const arr = [
 
 const PlatformStats = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid xs:grid-cols-2 sx:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5  gap-3">
       {arr.map((item, id) => (
         <div key={id} className="flex flex-col items-center justify-center bg-medium-purple rounded-lg w-[128px] h-[118px]">
           <Image src={item.image_url} alt={item.text} width={40} height={40} />

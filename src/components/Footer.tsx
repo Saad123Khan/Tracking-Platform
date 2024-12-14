@@ -10,11 +10,11 @@ const Footer = () => {
             </div>
 
             <div className='flex gap-3 items-center'>
-                <Image src={"/images/twitter.png"} alt='twitter' width={40} height={40}/>
-                <Image src={"/images/telegram.png"} alt='telegram' width={40} height={40}/>
-                <Image src={"/images/footer-icon3.png"} alt='footer-icon3' width={40} height={40}/>
-                <Image src={"/images/footer-icon4.png"} alt='footer-icon4' width={40} height={40}/>
-                <Image src={"/images/footer-icon5.png"} alt='footer-icon5' width={40} height={40}/>
+                <Image src={"/images/twitter.png"} alt='twitter' width={30} height={30}/>
+                <Image src={"/images/telegram.png"} alt='telegram' width={30} height={30}/>
+                <Image src={"/images/footer-icon3.png"} alt='footer-icon3' width={30} height={30}/>
+                <Image src={"/images/footer-icon4.png"} alt='footer-icon4' width={30} height={30}/>
+                <Image src={"/images/footer-icon5.png"} alt='footer-icon5' width={30} height={30}/>
             </div>
       </div>
     </div>

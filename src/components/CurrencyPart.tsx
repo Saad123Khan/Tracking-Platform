@@ -1,6 +1,7 @@
 "use client"
 import Image from 'next/image';
 import React, { useState } from 'react'
+import Marquee from 'react-fast-marquee';
 import { FaEthereum, FaGithub } from 'react-icons/fa'; // Example icons
 import { RiArrowDropDownLine } from "react-icons/ri";
 
@@ -60,12 +61,12 @@ const CurrencyPart = () => {
   };
   return (
     <div>
-      <div className="flex items-center justify-between gap-1 ">
-        <div className="bg-medium-purple  flex items-center rounded-lg gap-4 h-[50px] p-[10px]">
+      <div className="flex bg-medium-purple items-center  gap-1 ">
+        <div className="flex items-center rounded-lg gap-4 h-[50px] p-[10px]">
 
           {/*--------------------- <drop down>-------------- */}
-          <div className="relative inline-block text-left">
-            <button className="text-sm gap-1 flex items-center bg-[#1d214d] text-white px-4 py-2 rounded-[100px]  focus:outline-none">
+         <div className="relative inline-block text-left">
+            <button className="text-sm gap-2 h-[30px] flex items-center bg-[#1d214d] text-white sx:px-3 sm:px-4 py-2 rounded-[100px]  focus:outline-none">
               {selectedChain === 'ETHEREUM' && <Image src={"/images/ethereum.png"} alt='ethereum-img' width={17} height={17} />}
               {selectedChain === 'SOLANA' &&   <Image src={"/images/solana.png"} alt='solana-img' width={17} height={17} /> }
               {selectedChain === 'BASE' && <Image src={"/images/Base.png"} alt='BASE-img' width={17} height={17} />}
@@ -73,7 +74,7 @@ const CurrencyPart = () => {
               {selectedChain === 'POLYGON' &&   <Image src={"/images/polygon.png"} alt='BSC-img' width={17} height={17} />}
               {selectedChain}
 
-              <RiArrowDropDownLine color='#645ad2' size={"20px"} onClick={dropDowmnHandle} />
+              <RiArrowDropDownLine color='#645ad2' size={"40px"} onClick={dropDowmnHandle} />
             </button>
 
             {
@@ -118,26 +119,18 @@ const CurrencyPart = () => {
           </div>
 
 
+         
+        </div>
 
-
-
-
-
-
-
-
-
-
-          <div className="text-sm flex gap-1">
+       <Marquee >
+       <div className="text-sm flex gap-1">
             ETH:
             <p>
               {" "}
               $3,578.12 <span className="text-[#C2353E]">-2.5%</span> 24h
             </p>
           </div>
-        </div>
-
-        <div className="bg-medium-purple h-[50px] flex items-center rounded-lg gap-2 p-[10px]">
+       <div className=" h-[50px] flex items-center rounded-lg gap-2 p-[10px]">
           {arr.map((item) => (
             <div key={item.id} className="flex items-center gap-3">
               <p></p>
@@ -161,6 +154,7 @@ const CurrencyPart = () => {
             </div>
           ))}
         </div>
+       </Marquee>
       </div>
     </div>
   )

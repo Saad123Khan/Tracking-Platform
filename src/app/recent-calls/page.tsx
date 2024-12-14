@@ -9,8 +9,8 @@ const page = () => {
       <div className='mt-[20px] px-[20px]'>
         <CurrencyPart />
 
-        <div className='mt-[20px] flex justify-between'>
-          <h4>Recent Calls</h4>
+        <div className='mt-[20px] flex justify-between items-center'>
+          <h4 className='xs:text-sm md:text-lg'>Recent Calls</h4>
           <div className="flex items-center gap-1 bg-[#1d214d] rounded-md w-[172px] h-[40px] px-[10px] border border-[#383838]">
             <CiSearch />
             <input

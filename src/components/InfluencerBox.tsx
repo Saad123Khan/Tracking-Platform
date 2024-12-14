@@ -28,7 +28,7 @@ const router = useRouter()
   return (
      <>
       {arr.map((item) => (
-        <div key={item.id} className="flex justify-between items-center bg-medium-purple p-[20px] w-[320px] rounded-md">
+        <div key={item.id} className="w-full flex xs:mt-2 md:mt-0 xs:hidden sx:flex justify-between items-center bg-medium-purple p-[20px] md:w-[320px] rounded-md">
           <div className="flex justify-between  items-center gap-2">
             <Image className="object-contain" src={item.img_url} alt="profile" width={52} height={52} />
             <div>
@@ -39,7 +39,7 @@ const router = useRouter()
             </div>
           </div>
 
-          <div className="cursor-pointer" onClick={() =>router.push("/influencer-individual-stats")}>
+          <div className="cursor-pointer " onClick={() =>router.push("/influencer-individual-stats")}>
           <Image src={"/images/arrow.png"} alt="arrow" width={46} height={46} />
           </div>
         </div>

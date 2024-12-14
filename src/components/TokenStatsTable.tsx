@@ -1,7 +1,10 @@
+"use client"
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import InfluencerBox from "./InfluencerBox";
+import { RiArrowDropDownLine, RiMenuAddFill } from "react-icons/ri";
+import { PiArrowSquareUpRight } from "react-icons/pi";
 const tableHeaders: string[] = [
   "S/N",
   "Ticker",
@@ -53,12 +56,18 @@ const tableData: { [key: string]: string }[] = [
 ];
 
 const TokenStats = () => {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
+  
+    const toggleOpen = (index: number) => {
+      setOpenIndex(openIndex === index ? null : index);
+    };
   return (
+    
     <>
       <div className="flex justify-between items-center">
         <h4 className="font-[500]">Token stats panel</h4>
 
-        <div className="flex gap-3 items-center">
+        <div className="flex gap-3 items-center sm:flex xs:hidden">
           <div>
             <select
               name=""
@@ -78,10 +87,15 @@ const TokenStats = () => {
             />
           </div>
         </div>
+        <div className='md:hidden' >
+
+          <RiMenuAddFill color="#6258cf" size={"30px"} />
+        </div>
+
       </div>
 
       <div
-        className="relative overflow-x-auto mt-[20px] mb-[20px]"
+        className="relative overflow-x-auto mt-[20px] mb-[20px]  xs:hidden sm:block"
         style={{ height: "230px", overflowY: "auto" }}
       >
         <table
@@ -103,8 +117,9 @@ const TokenStats = () => {
                 <td className="px-6 py-3 text-center text-xs">{row.id}</td>
 
                 <td className="px-6 py-5 whitespace-nowrap text-xs flex items-center text-center">
-                    <Image src={row.image_url} alt={"image"} width={35} height={35} className="w-8 h-8 rounded-full mr-2" />
-                    {row.Ticker}
+                {row.Ticker}
+                <PiArrowSquareUpRight color="#3c3a88"/>
+              
                 </td>
                 <td className="px-6 py-3 text-center text-xs">
                   {row.highVolume}
@@ -123,6 +138,60 @@ const TokenStats = () => {
           </tbody>
         </table>
       </div>
+
+
+      {/* --------------------mobile-view-table------------------- */}
+       <div className="sm:hidden mt-[20px] ">
+            <div className="bg-medium-purple mb-[10px] flex justify-between rounded-md px-[20px] py-[10px]">
+                  <h6>S/N</h6>
+                  <h6>Ticker</h6>
+                  <h6>Number Of Mentions</h6>
+            </div>
+           
+            <div className="bg-medium-purple rounded-md text-white px-[2px]">
+            {tableData.map((data, index) => (
+              <div
+                key={index}
+              >
+                <header className="flex justify-between items-center p-[10px]">
+                  <div className="text-sm">
+                    {data.id} 
+                  </div>
+                  <div className="text-sm text-[#fff] flex gap-2 items-center">{data.Ticker}
+                  <PiArrowSquareUpRight color="#3c3a88"/>
+                  </div>
+                  <div className="text-sm text-[#fff]">{data.noOfMent}</div>
+                  <RiArrowDropDownLine
+                    color="#fff"
+                    size={"30px"}
+                    onClick={() => toggleOpen(index)}
+                    className="cursor-pointer"
+                  />
+                </header>
+                <hr className="border-t-2 border-[#262246]" />
+                {openIndex === index && (
+                  <div className="space-y-4 p-[10px] text-sm">
+                    <div className="flex justify-between ">
+                      <div className="text-sm">Highest Volume</div>
+                      <div className="text-sm break-all"  >{data.highVolume}</div>
+                    </div>
+                 
+                 
+                    <div className="flex justify-between">
+                      <div className="text-sm">Top 3 Influencers</div>
+                      <div>
+                      <div>{data.Influencer1}</div>
+                      <div>{data.Influencer2}</div>
+                      <div>{data.Influencer3}</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+      
+           </div>
     </>
   );
 };

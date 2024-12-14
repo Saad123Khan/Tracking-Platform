@@ -73,13 +73,13 @@ const InfluencersIndividualTable = () => {
             style={{ height: "300px", overflowY: "auto" }}
         >
             <table
-                className="w-full text-sm text-left text-white border-separate"
+                className="w-full text-xs text-left text-white border-separate"
                 style={{ borderSpacing: "0 3px" }}
             >
-                <thead className="text-sm bg-medium-purple font-[400] rounded-lg " >
+                <thead className="text-xs bg-medium-purple font-[400] rounded-lg " >
                     <tr >
                         {tableHeaders.map((header, index) => (
-                            <th key={index} className="px-6 py-6 text-center text-xs font-[600] ">
+                            <th key={index} className="xs:px-3 sx:px-6 py-6 text-center text-xs font-[600] ">
                                 {header}
                             </th>
                         ))}
@@ -88,12 +88,18 @@ const InfluencersIndividualTable = () => {
                 <tbody>
                     {tableData.map((row, rowIndex) => (
                         <tr key={rowIndex} className="bg-medium-purple">
-                            <td className="px-6 py-3 text-center text-xs">{row.id}</td>
+                            <td className="xs:px-3sx:px-6 py-3 text-center text-xs">{row.id}</td>
 
 
-                            <td className="px-6 py-3 text-center font-[400] text-xs">{row.token}</td>
-                            <td className="px-6 py-3 text-center font-[400] text-xs">{row.buyVolume}</td>
-                            <td className="px-6 py-3 text-center font-[400] text-xs">{row.priceChange}</td>
+                            <td className="xs:px-3 sx:px-6py-3 text-center font-[400] text-xs">{row.token}</td>
+                            <td className="xs:px-3 sx:px-6 py-3 text-center font-[400] text-xs">{row.buyVolume}</td>
+                            <td 
+                            className={`xs:px-3 sx:px-6 py-3 text-center font-[400] text-xs ${
+                                row.priceChange.startsWith("+")
+                                  ? "text-green-500"
+                                  : "text-red-500"
+                              }`}
+                            >{row.priceChange}</td>
 
 
                         </tr>
